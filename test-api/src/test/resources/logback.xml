@@ -1,0 +1,15 @@
+<configuration>
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-5level %d{HH:mm:ss.SSS} [%thread]  %logger{36}.%M,%L - %msg%n</pattern>
+        </encoder>
+    </appender>
+   
+    <logger name="biz.letsweb.osgi.test.api" level="DEBUG" />
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

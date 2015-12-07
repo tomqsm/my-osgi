@@ -1,0 +1,3 @@
+Export-Package:biz.letsweb.osgi.test.api
+Import-Package:org.osgi*
+Bundle-Activator:biz.letsweb.osgi.test.api.Activator
