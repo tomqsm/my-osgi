@@ -19,7 +19,6 @@
             <groupId>biz.letsweb.osgi</groupId>
             <artifactId>test-api</artifactId>
             <version>1.0.0</version>
-            <type>jar</type>
             <scope>provided</scope>
         </dependency>
         
@@ -31,7 +30,6 @@
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.compendium</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.scr.annotations</artifactId>
@@ -47,15 +45,6 @@
             <artifactId>pax-exam-link-mvn</artifactId>
         </dependency>
 
-        <!--        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>-->
- 
     </dependencies>
 
     <build>
@@ -72,6 +61,8 @@
                             <![CDATA[
                             org.osgi.framework;version="1.8",
                             org.osgi.util.tracker,
+                            org.osgi.service.*,
+                            org.slf4j.*,
                             biz.letsweb.osgi.test.api;version="1.0.0"
                             ]]>
                         </Import-Package>
