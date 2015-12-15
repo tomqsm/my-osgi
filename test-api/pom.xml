@@ -23,7 +23,12 @@
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.compendium</artifactId>
         </dependency>
-        
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.scr.annotations</artifactId>
+        </dependency>
+
         <!--pax exam-->
         <dependency>
             <groupId>org.ops4j.pax.exam</groupId>
@@ -33,11 +38,6 @@
             <groupId>org.ops4j.pax.exam</groupId>
             <artifactId>pax-exam-link-mvn</artifactId>
         </dependency>
-
-        <!--        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-atinject_1.0_spec</artifactId>
-        </dependency>-->
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -66,6 +66,7 @@
                         <!--<Bundle-Activator>biz.letsweb.osgi.test.api.Activator</Bundle-Activator>-->
                         <Export-Package />
                         <_include>src/main/resources/maven-build.bnd</_include>
+                        <_dsannotations>*</_dsannotations>
                     </instructions>
                 </configuration>
             </plugin>
