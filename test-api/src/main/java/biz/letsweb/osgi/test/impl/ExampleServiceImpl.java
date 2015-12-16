@@ -20,7 +20,7 @@ public class ExampleServiceImpl implements ExampleService {
 
     @Override
     public void doService() {
-        System.out.println("ExampleServiceImpl does service...");
+        System.out.println("SExampleServiceImpl does service...");
     }
 
     public void bindPreferencesService(PreferencesService preferencesService) {
