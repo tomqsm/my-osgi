@@ -18,9 +18,11 @@ import org.osgi.service.prefs.PreferencesService;
 @Property(name = ExampleService.ECHO_TYPE_PROP, value = "Declarative Services")
 public class ExampleServiceImpl implements ExampleService {
 
+    private String message = "hello from example service implementations";
+
     @Override
     public void doService() {
-        System.out.println("SExampleServiceImpl does service...");
+        System.out.println(message);
     }
 
     public void bindPreferencesService(PreferencesService preferencesService) {
