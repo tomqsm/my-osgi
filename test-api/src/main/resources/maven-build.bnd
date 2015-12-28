@@ -1,4 +1,3 @@
 Private-Package:biz.letsweb.osgi.test.impl
-Export-Package:biz.letsweb.osgi.test.api
 Import-Package:org.osgi.framework;version="1.8",biz.letsweb.osgi.test.api
 Bundle-Activator:biz.letsweb.osgi.test.api.Activator
