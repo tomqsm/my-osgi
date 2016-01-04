@@ -1,7 +1,6 @@
 package biz.letsweb.osgi.test.api;
 
 import biz.letsweb.osgi.test.impl.ExampleServiceImpl;
-import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
@@ -10,16 +9,14 @@ import org.osgi.framework.ServiceRegistration;
  /Users/toks/Documents/NetBeansProjects/my-osgi/test-client/target/test-client-1.0.0.jar
  @author toks
  */
-public class Activator implements BundleActivator {
+public class Activator { //implements BundleActivator {
 
     private ServiceRegistration registration;
-    @Override
     public void start(BundleContext context) throws Exception {
         System.out.println("test-api started ...");
         registerService(context);
     }
 
-    @Override
     public void stop(BundleContext context) throws Exception {
         System.out.println("test-api stopped ...");
         registration.unregister();

@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.scr.annotations</artifactId>
+            <artifactId>org.apache.felix.scr.ds-annotations</artifactId>
         </dependency>
 
         <!--pax exam-->
@@ -65,13 +65,18 @@
                         <Bundle-SymbolicName>test-api</Bundle-SymbolicName>
                         <Export-Package>biz.letsweb.osgi.test.api;version="${project.version}"</Export-Package>
                         <Private-Package>biz.letsweb.osgi.test.impl</Private-Package>
-                        <Import-Package>org.osgi.framework;version="1.8",biz.letsweb.osgi.test.api;version="{project.version}</Import-Package>
-                        <Bundle-Activator>biz.letsweb.osgi.test.api.Activator</Bundle-Activator>
+                        <Import-Package>org.osgi.framework;version="1.8",biz.letsweb.osgi.test.api;version="${project.version}</Import-Package>
+                        <!--<Bundle-Activator>biz.letsweb.osgi.test.api.Activator</Bundle-Activator>-->
                         <!--<_include>src/main/resources/maven-build.bnd</_include>-->
+                        <Service-Component>*</Service-Component>
                         <_dsannotations>*</_dsannotations>
                     </instructions>
                 </configuration>
             </plugin>
+            <!--            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

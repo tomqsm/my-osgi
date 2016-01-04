@@ -28,12 +28,14 @@
                 <version>5.0.0</version>
                 <scope>provided</scope>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.scr.annotations</artifactId>
-                <version>1.9.12</version>
+                <artifactId>org.apache.felix.scr.ds-annotations</artifactId>
+                <version>1.2.8</version>
                 <scope>provided</scope>
             </dependency>
+
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
@@ -84,7 +86,21 @@
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
                     <version>3.0.1</version>
+                    <!--The <extensions>true</extensions> line enables arbitrary custom headers-->
                     <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-scr-plugin</artifactId>
+                    <version>1.21.0</version>
+                    <executions>
+                        <execution>
+                            <id>generate-scr-scrdescriptor</id>
+                            <goals>
+                                <goal>scr</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

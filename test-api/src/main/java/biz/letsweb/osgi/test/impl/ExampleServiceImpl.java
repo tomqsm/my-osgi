@@ -1,21 +1,18 @@
 package biz.letsweb.osgi.test.impl;
 
 import biz.letsweb.osgi.test.api.ExampleService;
-import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Deactivate;
-import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Service;
 import org.osgi.service.component.ComponentContext;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.prefs.PreferencesService;
 
 /**
  *
  * @author toks
  */
-@Component(name = "Echo", immediate = true)
-@Service(value = ExampleService.class)
-@Property(name = ExampleService.ECHO_TYPE_PROP, value = "Declarative Services")
+@Component(name = "ExampleServiceImpl", immediate = true)
 public class ExampleServiceImpl implements ExampleService {
 
     private String message = "hello from example service implementations";
@@ -33,13 +30,22 @@ public class ExampleServiceImpl implements ExampleService {
         System.out.println("PreferencesService is unlinked");
     }
 
+    /**
+     Activate annotated method gets invoked when the service component becomes satisfied with all the service references and their requirements.
+     @param context
+     */
     @Activate
-    protected void activate(ComponentContext context) {
+    public void activate(ComponentContext context) {
         System.out.println("Example activated");
     }
 
+    @Modified
+    public void modified(ComponentContext ctx) {
+        System.out.println("Example modified");
+    }
+
     @Deactivate
-    protected void deactivate(ComponentContext context) {
+    public void deactivate(ComponentContext context) {
         System.out.println("Example deactivated");
     }
 }

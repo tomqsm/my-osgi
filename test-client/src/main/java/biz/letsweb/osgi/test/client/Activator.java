@@ -3,7 +3,6 @@ package biz.letsweb.osgi.test.client;
 import biz.letsweb.osgi.test.api.ExampleService;
 import java.util.LinkedList;
 import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceEvent;
@@ -18,7 +17,7 @@ import org.osgi.util.tracker.ServiceTracker;
  see also example wit hservice tracker http://www.eclipsezone.com/eclipse/forums/t90796.html
  @author toks
  */
-public class Activator implements BundleActivator {
+public class Activator {//implements BundleActivator {
 
     private final LinkedList<LogReaderService> logReaderServices = new LinkedList<>();
     private LogListener logConsoleWriter = new LogWriter();
@@ -31,7 +30,7 @@ public class Activator implements BundleActivator {
             final ServiceReference<?> serviceReference = event.getServiceReference();
             final BundleContext bundleContext = serviceReference.getBundle().getBundleContext();
             if (event.getType() == ServiceEvent.REGISTERED) {
-                System.out.println("[test-client] registered " + serviceReference.toString());
+                System.out.println("[test-client] ServiceEvent.REGISTERED " + serviceReference.toString());
                 exampleServiceRef = serviceReference;
                 if (exampleServiceRef != null) {
                     try {
@@ -58,7 +57,6 @@ public class Activator implements BundleActivator {
         }
     };
 
-    @Override
     public void start(BundleContext context) {
         System.out.println("[test-client] starts");
         // Get a list of all the registered LogReaderService, and add the console listener
@@ -139,7 +137,6 @@ public class Activator implements BundleActivator {
         }
     };
 
-    @Override
     public void stop(BundleContext context) throws Exception {
         System.out.println("[test-client] stops");
         context.removeServiceListener(exampleServiceListener);
