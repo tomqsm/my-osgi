@@ -65,7 +65,7 @@
                         <Bundle-SymbolicName>test-api</Bundle-SymbolicName>
                         <Export-Package>biz.letsweb.osgi.test.api;version="${project.version}"</Export-Package>
                         <Private-Package>biz.letsweb.osgi.test.impl</Private-Package>
-                        <Import-Package>org.osgi.framework;version="1.8",biz.letsweb.osgi.test.api;version="{project.version}</Import-Package>
+                        <Import-Package>org.osgi.framework;version="1.8",biz.letsweb.osgi.test.api;version="${project.version}</Import-Package>
                         <Bundle-Activator>biz.letsweb.osgi.test.api.Activator</Bundle-Activator>
                         <!--<_include>src/main/resources/maven-build.bnd</_include>-->
                         <_dsannotations>*</_dsannotations>
