@@ -8,29 +8,36 @@
     </parent>
 
     <groupId>biz.letsweb.osgi</groupId>
-    <artifactId>test-api</artifactId>
+    <artifactId>test-gogo-command</artifactId>
     <version>1.0.0</version>
     <packaging>bundle</packaging>
 
-    <name>test-api</name>
+    <name>test-gogo-command</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>biz.letsweb.osgi</groupId>
+            <artifactId>test-api</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
         </dependency>
-        <dependency>
+        <!--        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.compendium</artifactId>
-        </dependency>
-
+        </dependency>-->
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.scr.annotations</artifactId>
         </dependency>
 
-
-       
     </dependencies>
 
     <build>
@@ -38,16 +45,13 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>test-api</Bundle-SymbolicName>
-                        <Export-Package>biz.letsweb.osgi.test.api;version="${project.version}"</Export-Package>
-                        <Private-Package></Private-Package>
+                        <Bundle-Name>${project.name}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Import-Package>*</Import-Package>
-                        <!--<Bundle-Activator>biz.letsweb.osgi.test.api.Activator</Bundle-Activator>-->
-                        <!--<_include>src/main/resources/maven-build.bnd</_include>-->
-                        <!--<Service-Component>*</Service-Component>-->
-                        <!--<_dsannotations>*</_dsannotations>-->
+                        <Export-Package></Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -58,8 +62,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-   
 </project>
