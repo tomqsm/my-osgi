@@ -19,7 +19,6 @@
             <groupId>biz.letsweb.osgi</groupId>
             <artifactId>test-api</artifactId>
             <version>1.0.0</version>
-            <scope>provided</scope>
         </dependency>
         
         <dependency>
@@ -54,6 +53,10 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-scr-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

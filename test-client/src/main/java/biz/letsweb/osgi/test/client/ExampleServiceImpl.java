@@ -12,7 +12,7 @@ import org.apache.felix.scr.annotations.Service;
 @Service(value = ExampleService.class)
 public class ExampleServiceImpl implements ExampleService {
 
-    private String message = "hello from example service implementations";
+    private String message = "example service implementation executing well it changes";
 
     @Override
     public void doService() {

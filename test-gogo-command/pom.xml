@@ -20,24 +20,25 @@
 
     <dependencies>
         <dependency>
-            <groupId>biz.letsweb.osgi</groupId>
-            <artifactId>test-api</artifactId>
-            <version>1.0.0</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
         </dependency>
-        <!--        <dependency>
+        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.compendium</artifactId>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.scr.annotations</artifactId>
         </dependency>
-
+        
+        <dependency>
+            <groupId>biz.letsweb.osgi</groupId>
+            <artifactId>test-api</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -50,6 +51,7 @@
                     <instructions>
                         <Bundle-Name>${project.name}</Bundle-Name>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <!--<Include-Resource>src/main/resources/config/TestGogoCommand.properties</Include-Resource>-->
                         <Import-Package>*</Import-Package>
                         <Export-Package></Export-Package>
                     </instructions>
@@ -62,11 +64,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
             </plugin>
         </plugins>
     </build>

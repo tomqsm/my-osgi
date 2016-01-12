@@ -28,9 +28,6 @@
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.scr.annotations</artifactId>
         </dependency>
-
-
-       
     </dependencies>
 
     <build>
@@ -44,10 +41,6 @@
                         <Export-Package>biz.letsweb.osgi.test.api;version="${project.version}"</Export-Package>
                         <Private-Package></Private-Package>
                         <Import-Package>*</Import-Package>
-                        <!--<Bundle-Activator>biz.letsweb.osgi.test.api.Activator</Bundle-Activator>-->
-                        <!--<_include>src/main/resources/maven-build.bnd</_include>-->
-                        <!--<Service-Component>*</Service-Component>-->
-                        <!--<_dsannotations>*</_dsannotations>-->
                     </instructions>
                 </configuration>
             </plugin>
